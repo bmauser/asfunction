@@ -324,4 +324,12 @@ class Generator{
 
 		return $content;
 	}
+
+
+	/**
+	 * Returns options
+	 */
+	public function getOptions(){
+		return $this->options;
+	}
 }

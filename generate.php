@@ -64,7 +64,7 @@ $generator = new Generator($options);
 try{
 	// save asfunctions.php file
 	if($generator->write()){
-		_echo("OK. Functions saved to: " . realpath($options['destFile']));
+		_echo("OK. Functions saved to: " . realpath($generator->getOptions()['destFile']));
 		exit (0);
 	}
 }
