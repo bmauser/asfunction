@@ -184,7 +184,7 @@ class Generator{
 					if(count($params) < 3)
 						throw new Exception("Invalid {$this->options['tag']} tag $doc_tag in $filepath", E_USER_NOTICE);
 
-					// name of the @asfunction
+					// function name
 					$function_name = trim($params[0]);
 					if(substr($function_name, -2) == '()') // remove last () from function name
 						$function_name = substr($function_name, 0, -2);
@@ -196,8 +196,8 @@ class Generator{
 						$function_name = substr($function_name, $has_namespace + 1);
 
 						// if namespace is not absolute
-						if($namespace[0] != '\\')
-							throw new Exception("Not absolute namespace for $function_name", 510);
+						if(!isset($namespace[0]) or $namespace[0] != '\\')
+							throw new Exception("Set absolute namespace for $namespace\\$function_name", 510);
 					}else
 						throw new Exception("Namespace not set for $function_name", 509);
 
