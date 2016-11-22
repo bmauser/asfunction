@@ -10,7 +10,7 @@ namespace Asfunction;
  * @param string $exception_message
  */
 if (!function_exists('\Asfunction\getPropertyBySelector')) {
-    function &getPropertyBySelector(&$object, $selector, $exception_class_name = 'Asfunction\Exception', $exception_message = null){
+    function &getPropertyBySelector(&$object, $selector, $exception_class_name = '\Exception', $exception_message = null){
     
         if(!$exception_message)
             $exception_message = 'Value ' . $selector . ' not set';
